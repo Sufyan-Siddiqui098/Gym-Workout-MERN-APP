@@ -29,7 +29,7 @@ export const workoutSlice = createSlice({
             state.workouts = action.payload;
         })
         builder.addCase(addWorkout.fulfilled, (state, action)=>{
-            state.workouts.push(action.payload)
+            state.workouts.unshift(action.payload)
         })
         builder.addCase(addWorkout.rejected, (state, action)=>{
             console.log("Error occured!!")
