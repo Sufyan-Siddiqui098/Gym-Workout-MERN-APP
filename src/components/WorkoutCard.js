@@ -16,7 +16,13 @@ const WorkoutCard = () => {
  return (workout && workout.map((el)=>{
     return(
     <div className="card" key={el._id}>
+        <div className='flex-sp-bw'>
         <h3>{el.title}</h3>
+        <div className="icons">
+        <i className="fa-regular fa-pen-to-square"></i>
+        <i className="fa-solid fa-trash"></i>
+        </div>
+        </div>
         <p>{el.reps} Reps</p>
         <p>{el.load} Kg</p>
     </div>
