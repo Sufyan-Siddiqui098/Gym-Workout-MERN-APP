@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Bench Press",
+        "reps" : 10,
+        "load": 15
+    },
+    {
+        "title": "Squats",
+        "reps": 12,
+        "load": 20
+    },
+    {
+        "title": "Inclined Bench Press",
+        "reps": 10,
+        "load": 15
+    },
+    {
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    },
+    {
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+    ,{
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+    ,{
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+    ,{
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+    ,{
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+    ,{
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+    ,{
+        "title": "Dumbell Curl",
+        "reps": 12,
+        "load": 8
+    }
+]
