@@ -10,7 +10,7 @@ const WorkoutForm = () => {
   let workout = {title, reps, load}
 
   return (
-    <form action="">
+    <form action="" onSubmit={(e)=> {e.preventDefault(); dispatch(addWorkout(workout))}}>
         <h1>Add Workout</h1>
         <div>
             <label htmlFor="title">Title:</label>
@@ -26,7 +26,7 @@ const WorkoutForm = () => {
             <input type="number" name="laod" id="load" placeholder='Load (Kg)' onChange={(e)=>setLoad(e.target.value)} value={load}/>
         </div>
 
-        <button className='btn submit' onClick={(e)=>{ e.preventDefault(); dispatch(addWorkout(workout))}} >Add</button>
+        <button className='btn submit'  >Add</button>
     </form>
   )
 }
