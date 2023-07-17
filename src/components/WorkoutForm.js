@@ -9,8 +9,16 @@ const WorkoutForm = () => {
   const [load, setLoad] = useState('')
   let workout = {title, reps, load}
 
+  const onSubmit = (e)=>{
+    e.preventDefault();  
+    setTitle("");
+    setReps("");
+    setLoad("")
+    dispatch(addWorkout(workout))
+  }
+
   return (
-    <form action="" onSubmit={(e)=> {e.preventDefault(); dispatch(addWorkout(workout))}}>
+    <form action="" onSubmit={onSubmit}>
         <h1>Add Workout</h1>
         <div>
             <label htmlFor="title">Title:</label>
