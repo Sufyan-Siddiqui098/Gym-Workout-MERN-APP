@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchWorkouts, deleteWorkout } from '../store/workoutSlice'
+import { fetchWorkouts, deleteWorkout, fetchWorkout } from '../store/workoutSlice'
 
 
 
@@ -11,11 +11,13 @@ const WorkoutCard = () => {
 
     useEffect(()=>{
         dispatch(fetchWorkouts())
+        console.log("UseEffect is running inside WorkoutCard.js")
         //eslint-disable-next-line
     }, [])
 
     const handleEdit = ()=>{
         document.getElementById("modal").classList.add("active")
+        
     }
 
     
@@ -26,8 +28,8 @@ const WorkoutCard = () => {
         <div className='flex-sp-bw'>
         <h3>{el.title}</h3>
         <div className="icons">
-        <i className="fa-regular fa-pen-to-square" onClick={handleEdit}>r</i>
-        <i className="fa-solid fa-trash" onClick={()=>{console.log(el._id);return dispatch(deleteWorkout(el._id))}}>d</i>
+        <i className="fa-regular fa-pen-to-square" onClick={()=>{handleEdit(); return dispatch(fetchWorkout(el._id))}}></i>
+        <i className="fa-solid fa-trash" onClick={()=>{console.log(el._id);return dispatch(deleteWorkout(el._id))}}></i>
         </div>
         </div>
         <p>{el.reps} Reps</p>
