@@ -44,6 +44,8 @@ a:focus{
   width: 70%;
   margin: 2em auto;
 }
+
+/* Content Hold ADD-WORKOUT form and WORKOUT-CARDs */
 .content{
   display: grid;
   gap: 2em;
@@ -53,6 +55,7 @@ a:focus{
   padding: 1.5em 0;
 
 }
+/* CARDS */
 .card-container{
   display: flex;
   flex-direction: column;
@@ -76,8 +79,25 @@ a:focus{
 
 .card h3{
   color: #026440;
+  margin-bottom: .5em;
+}
+.flex-sp-bw{
+  display: flex;
+  justify-content: space-between;
+  gap:4px;
+}
+.icons{
+  display: flex;
+  gap: .4em;  
 }
 
+.icons i,
+i{
+  cursor: pointer;
+  /* border: 2px solid red; */
+}
+
+/* FORM */
 div.form{
   /* border: 2px solid black; */
   width: 100%;
@@ -97,10 +117,7 @@ form{
   gap: .8em;
 }
 form h1{ 
-  /* margin-top: .7em;
-  margin-bottom: 1em; */
   margin: .7em 0;
-  /* color: red; */
   /* border: 2px solid red; */
   width: 100%;
   text-align: center;
@@ -116,7 +133,6 @@ form div{
 }
 
 form div label{
-  /* text-align: right; */
   width: 35%;
   /* border: 2px solid red; */
 }
@@ -138,6 +154,56 @@ form div input{
   color: #f1f1f1;
   border: 1px solid lightgray;
   background-color: #026440;
+}
+/* MODAL  */
+.modal{
+  border: 2px solid black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  background-color: #333333b7;
+}
+.active{
+  display: flex;
+}
+#form-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px 0px;
+  background-color: #f1f1f1;  
+  border-radius: 1em;
+  max-width: 400px;
+  min-width: fit-content;
+  padding: 1em 1.8em;
+  min-height: 40vh;
+}
+#form-modal h2{
+  margin: .8em 0;
+}
+#form-modal input,
+#form-modal button{
+  padding: .5em 1em;
+  width: 100%;
+  border: 1px solid dimgray;
+  border-radius: .5em;
+}
+#form-modal button{
+  margin: 1em 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #026440;
+}
+
+#form-modal button:hover,
+#form-modal button:focus{
+  background-color: #013321;
+  
 }
 
 @media screen and (max-width: 1080px) {
@@ -178,11 +244,11 @@ form div input{
   form label{
     display: none;
   }
-}
-@media screen and (max-width: 400px) {
   .card h3{
     font-size: 1em;
   }
+}
+@media screen and (max-width: 400px) {
   form h1{
     font-size: 1.4em;
   }
