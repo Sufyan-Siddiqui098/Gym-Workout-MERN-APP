@@ -1,17 +1,24 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchWorkouts } from '../store/workoutSlice'
+import { fetchWorkouts, deleteWorkout } from '../store/workoutSlice'
 
 
 
 
 const WorkoutCard = () => {
     const dispatch = useDispatch();
+    const workout = useSelector((state)=>state.workout.workouts)
+
     useEffect(()=>{
         dispatch(fetchWorkouts())
         //eslint-disable-next-line
     }, [])
-    const workout = useSelector((state)=>state.workout.workouts)
+
+    const handleEdit = ()=>{
+        document.getElementById("modal").classList.add("active")
+    }
+
+    
 
  return (workout && workout.map((el)=>{
     return(
@@ -19,8 +26,8 @@ const WorkoutCard = () => {
         <div className='flex-sp-bw'>
         <h3>{el.title}</h3>
         <div className="icons">
-        <i className="fa-regular fa-pen-to-square"></i>
-        <i className="fa-solid fa-trash"></i>
+        <i className="fa-regular fa-pen-to-square" onClick={handleEdit}>r</i>
+        <i className="fa-solid fa-trash" onClick={()=>{console.log(el._id);return dispatch(deleteWorkout(el._id))}}>d</i>
         </div>
         </div>
         <p>{el.reps} Reps</p>
