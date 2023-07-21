@@ -15,8 +15,8 @@ const UpdateModal = () => {
     setUTitle(title || "");
     setUReps(reps || "");
     setULoad(load || "")
-    //eslint-disable-next-line
-  }, [workout])
+    console.log("update modal useEffect..")
+  }, [title, reps,load])
   
   
   let updatedWorkout = {
