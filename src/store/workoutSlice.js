@@ -82,7 +82,9 @@ export const workoutSlice = createSlice({
         })
        //Update Workout
        builder.addCase(updateWorkout.fulfilled, (state, action)=>{
-        // console.log(action.payload)
+        state.workouts = state.workouts.map((el)=>(
+            el._id===action.payload._id ? action.payload : el
+        ))
         console.log('updated Successfully !!')
        })
     }
