@@ -13,8 +13,8 @@ const WorkoutCard = () => {
     useEffect(()=>{
         dispatch(fetchWorkouts())
         console.log("UseEffect is running inside WorkoutCard.js")
-        //eslint-disable-next-line
-    }, [])
+        
+    }, [dispatch])
 
     const handleEdit = ()=>{
         document.getElementById("modal").classList.add("active")

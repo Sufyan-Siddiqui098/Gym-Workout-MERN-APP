@@ -49,7 +49,6 @@ export const deleteWorkout = createAsyncThunk("deleteWorkout", async(id)=>{
         headers: {
           "Content-Type": "application/json"},
         });
-        //eslint-disable-next-line
         let json = await response.json()
         return json;
 })
@@ -70,6 +69,7 @@ export const workoutSlice = createSlice({
             state.workout = action.payload
 
         })
+        //Add Workout
         builder.addCase(addWorkout.fulfilled, (state, action)=>{
             state.workouts.unshift(action.payload)
         })
@@ -85,7 +85,6 @@ export const workoutSlice = createSlice({
         state.workouts = state.workouts.map((el)=>(
             el._id===action.payload._id ? action.payload : el
         ))
-        console.log('updated Successfully !!')
        })
     }
 })
