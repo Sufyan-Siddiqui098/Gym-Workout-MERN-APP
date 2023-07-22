@@ -15,7 +15,7 @@ const UpdateModal = () => {
     setUTitle(title || "");
     setUReps(reps || "");
     setULoad(load || "")
-    console.log("update modal useEffect..")
+    // console.log("update modal useEffect..")
   }, [title, reps,load])
   
   
@@ -26,7 +26,6 @@ const UpdateModal = () => {
   };
   const handleSubmit = (e)=>{
     e.preventDefault();
-    // console.log("updated workout from form ", updatedWorkout)
     let arg = {id: workout._id, updatedWorkout}
     dispatch(updateWorkout(arg)); //pass arg because throwing error when passing two arguements
     document.getElementById('modal').classList.remove('active')
